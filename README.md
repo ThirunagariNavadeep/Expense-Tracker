@@ -17,7 +17,7 @@ ExpenseTrack is a personal finance dashboard built with FastAPI, SQLAlchemy, SQL
 
 ![Login page](https://github.com/ThirunagariNavadeep/Expense-Tracker/blob/9273a0bee6725ec58945c894bc9ad77052f388d2/screenshots/Login.png)
 
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](https://github.com/ThirunagariNavadeep/Expense-Tracker/blob/00128b0bc64ce6e550330ac2a106932b78ece79b/screenshots/Dashboard.png)
 
 ## Architecture
 
