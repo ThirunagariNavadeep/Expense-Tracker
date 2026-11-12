@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTrack | Profile</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body data-page="profile">
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">ExpenseTrack</div>
+            <nav class="nav">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/transactions">Transactions</a>
+                <a href="/budgets">Budgets</a>
+                <a href="/reports">Reports</a>
+                <a class="active" href="/profile">Profile</a>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="topbar">
+                <div>
+                    <h1>Profile</h1>
+                </div>
+                <button id="logout-button" class="secondary-button">Logout</button>
+            </header>
+
+            <section class="card panel profile-card">
+                <h2>Account</h2>
+                <div id="profile-info" class="profile-info"></div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

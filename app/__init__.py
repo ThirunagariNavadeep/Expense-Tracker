@@ -1,0 +1,1 @@
+"""ExpenseTrack application package."""

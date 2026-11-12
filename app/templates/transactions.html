@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTrack | Transactions</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body data-page="transactions">
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">ExpenseTrack</div>
+            <nav class="nav">
+                <a href="/dashboard">Dashboard</a>
+                <a class="active" href="/transactions">Transactions</a>
+                <a href="/budgets">Budgets</a>
+                <a href="/reports">Reports</a>
+                <a href="/profile">Profile</a>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="topbar">
+                <div>
+                    <h1>Transactions</h1>
+                </div>
+                <button id="logout-button" class="secondary-button">Logout</button>
+            </header>
+
+            <section class="card panel form-panel">
+                <div class="panel-title-row">
+                    <h2>Add transaction</h2>
+                    <span class="status-pill status-good">Live</span>
+                </div>
+                <form id="transaction-form" class="stack-form">
+                    <div class="inline-fields">
+                        <label>
+                            Type
+                            <select name="transaction_type" required>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </label>
+                        <label>
+                            Category
+                            <select name="category_id" required id="transaction-category-select"></select>
+                        </label>
+                    </div>
+                    <div class="inline-fields">
+                        <label>
+                            Amount
+                            <input type="number" name="amount" min="0.01" step="0.01" required>
+                        </label>
+                        <label>
+                            Date
+                            <input type="date" name="transaction_date" required>
+                        </label>
+                    </div>
+                    <label>
+                        Description
+                        <input type="text" name="description" placeholder="Optional description">
+                    </label>
+                    <button type="submit" class="primary-button">Save Transaction</button>
+                </form>
+            </section>
+
+            <section class="card panel">
+                <div class="panel-header">
+                    <h2>History</h2>
+                    <div class="inline-filters">
+                        <label>
+                            Type
+                            <select id="filter-type">
+                                <option value="">All</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </label>
+                        <label>
+                            Search
+                            <input type="search" id="transaction-search" placeholder="Search">
+                        </label>
+                        <button id="refresh-transactions" class="secondary-button">Refresh</button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-table-body"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTrack | Budgets</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body data-page="budgets">
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">ExpenseTrack</div>
+            <nav class="nav">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/transactions">Transactions</a>
+                <a class="active" href="/budgets">Budgets</a>
+                <a href="/reports">Reports</a>
+                <a href="/profile">Profile</a>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="topbar">
+                <div>
+                    <h1>Budgets</h1>
+                </div>
+                <button id="logout-button" class="secondary-button">Logout</button>
+            </header>
+
+            <section class="card panel form-panel">
+                <div class="panel-title-row">
+                    <h2>Create budget</h2>
+                    <span class="status-pill status-good">Monthly plan</span>
+                </div>
+                <form id="budget-form" class="stack-form">
+                    <div class="inline-fields">
+                        <label>
+                            Category
+                            <select name="category_id" id="budget-category-select">
+                                <option value="">Overall budget</option>
+                            </select>
+                        </label>
+                        <label>
+                            Amount
+                            <input type="number" name="amount" min="0.01" step="0.01" required>
+                        </label>
+                    </div>
+                    <div class="inline-fields">
+                        <label>
+                            Month
+                            <input type="number" name="month" min="1" max="12" required>
+                        </label>
+                        <label>
+                            Year
+                            <input type="number" name="year" min="2000" required>
+                        </label>
+                    </div>
+                    <button type="submit" class="primary-button">Save Budget</button>
+                </form>
+            </section>
+
+            <section class="card panel">
+                <div class="panel-title-row">
+                    <h2>Budget Overview</h2>
+                    <span class="status-pill status-warning">Track progress</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="budget-table-body"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

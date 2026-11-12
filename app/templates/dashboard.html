@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTrack | Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body data-page="dashboard">
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">ExpenseTrack</div>
+            <nav class="nav">
+                <a class="active" href="/dashboard">Dashboard</a>
+                <a href="/transactions">Transactions</a>
+                <a href="/budgets">Budgets</a>
+                <a href="/reports">Reports</a>
+                <a href="/profile">Profile</a>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                </div>
+                <button id="logout-button" class="secondary-button">Logout</button>
+            </header>
+
+            <section class="summary-cards">
+                <article class="card summary-card accent-green">
+                    <span>Total Income</span>
+                    <strong id="income-total">$0.00</strong>
+                </article>
+                <article class="card summary-card accent-red">
+                    <span>Total Expenses</span>
+                    <strong id="expense-total">$0.00</strong>
+                </article>
+                <article class="card summary-card accent-blue">
+                    <span>Remaining Balance</span>
+                    <strong id="remaining-balance">$0.00</strong>
+                </article>
+                <article class="card summary-card accent-purple">
+                    <span>Monthly Budget</span>
+                    <strong id="monthly-budget">$0.00</strong>
+                </article>
+            </section>
+
+            <section class="card panel">
+                <div class="panel-header">
+                    <h2>Overview</h2>
+                    <div class="inline-filters">
+                        <label>
+                            Month
+                            <input type="number" id="summary-month" min="1" max="12" value="">
+                        </label>
+                        <label>
+                            Year
+                            <input type="number" id="summary-year" min="2000" value="">
+                        </label>
+                        <button id="refresh-summary" class="primary-button">Apply</button>
+                    </div>
+                </div>
+                <div class="overview-grid">
+                    <div>
+                        <p class="stat-label">Budget Utilization</p>
+                        <h3 id="budget-utilization">0%</h3>
+                    </div>
+                    <div>
+                        <p class="stat-label">Remaining Budget</p>
+                        <h3 id="remaining-budget">$0.00</h3>
+                    </div>
+                    <div>
+                        <p class="stat-label">Recent Transactions</p>
+                        <h3 id="recent-count">0</h3>
+                    </div>
+                </div>
+                <div id="budget-warning" class="alert success" style="display:none"></div>
+            </section>
+
+            <section class="two-columns">
+                <div class="card panel">
+                    <h2>Expense by Category</h2>
+                    <div id="category-breakdown" class="list-stack"></div>
+                </div>
+                <div class="card panel">
+                    <h2>Monthly Trend</h2>
+                    <div id="monthly-trend" class="trend-list"></div>
+                </div>
+            </section>
+
+            <section class="card panel">
+                <h2>Recent Transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recent-transactions-table"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

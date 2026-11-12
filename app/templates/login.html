@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTrack | Login</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body data-page="login" class="auth-page">
+    <main class="auth-shell">
+        <section class="auth-card">
+            <div class="brand-block">
+                <h1>ExpenseTrack</h1>
+                <p>Manage your money with clarity.</p>
+            </div>
+            <form id="login-form" class="auth-form">
+                <h2>Sign in</h2>
+                <label>
+                    Email
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password" required>
+                </label>
+                <button type="submit">Login</button>
+                <p class="auth-link">
+                    Don’t have an account? <a href="/register">Create one</a>
+                </p>
+            </form>
+        </section>
+    </main>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
